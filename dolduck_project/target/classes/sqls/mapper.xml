@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="member">
 
-<!-- 	<resultMap type="MemberDto" id="MemberMap">
+	<resultMap type="MemberDto" id="MemberMap">
 		<result column="MEMBER_SEQ" property="seq" />
 		<result column="MEMBER_ID" property="id" />
 		<result column="MEMBER_PW" property="pw" />
@@ -14,29 +14,31 @@
 		<result column="MEMBER_ENABLED" property="enabled" />
 		<result column="MEMBER_ROLE" property="role" />
 		<result column="MEMBER_VOTE" property="vote" />
-	</resultMap> -->
-
+	</resultMap>
+	
 	<select id="selectList" resultType="memberDto">
 		SELECT * FROM MEMBER
 	</select>
 
-	<!-- <select id="selectOne" parameterType="String" resultType="memberDto"> 
-		SELECT * FROM MEMBER WHERE MEMBER_ID=#{id} </select> -->
+	<select id="selectOne" parameterType="String"
+		resultType="memberDto">
+		SELECT * FROM MEMBER WHERE MEMBER_ID=#{id}
+	</select>
 
 	<insert id="insert" parameterType="memberDto">
 		INSERT INTO MEMBER
-		VALUES(MEMBERSEQ.NEXTVAL,#{member_id},#{member_pw},#{member_name},#{member_phone},#{member_addr},#{member_email},SYSDATE,'Y','USER',0)
+		VALUES(MEMBERSEQ.NEXTVAL,#{id},#{pw},#{name},#{phone},#{addr},#{email},SYSDATE,'Y','USER',0)
 	</insert>
 
 	<update id="update" parameterType="memberDto">
 		UPDATE MEMBER SET
-		MEMBER_PW=#{member_pw}, MEMBER_NAME=#{member_name} WHERE
-		MEMBER_ID=#{member_id}
+		MEMBER_PW=#{pw}, MEMBER_NAME=#{name} WHERE
+		MEMBER_ID=#{id}
 	</update>
 
 	<delete id="delete" parameterType="String">
 		DELETE FROM MEMBER WHERE
-		MEMBER_ID=#{member_id}
+		MEMBER_ID=#{id}
 	</delete>
 
 	<delete id="muldel" parameterType="String">
@@ -47,62 +49,11 @@
 		</foreach>
 	</delete>
 
-	<!-- <select id="login" parameterType="map" resultType="memberDto"> SELECT 
-		* FROM MEMBER WHERE MEMBER_ID=#{id} AND MEMBER_PW=#{pw} </select> -->
-
-	<select id="selectUser" resultType="java.util.Map">
-		SELECT
-		MEMBER_ID as username,
-		MEMBER_PW as password,
-		MEMBER_NAME as membername,
-		MEMBER_ENABLED as enabled,
-		MEMBER_ROLE as authority,
-		MEMBER_SEQ, MEMBER_EMAIL,
-		MEMBER_PHONE, MEMBER_ADDR,
-		MEMBER_REGDATE, MEMBER_VOTE
-		FROM MEMBER
-		WHERE MEMBER_ID=#{member_id}
+	<select id="login" parameterType="map" resultType="memberDto">
+		SELECT *
+		FROM
+		MEMBER
+		WHERE MEMBER_ID=#{id} AND MEMBER_PW=#{pw}
 	</select>
 
-	<insert id="insertUser" parameterType="map">
-		INSERT INTO MEMBER
-		VALUES(MEMBERSEQ.NEXTVAL,#{member_id},#{member_pw},#{member_name},#{member_phone},#{member_addr},#{member_email},SYSDATE,1,'ROLE_USER',1)
-	</insert>
-
-	<!-- 회원가입 및 체크 -->
-	<insert id="memberRegister" parameterType="memberDto">
-		INSERT INTO MEMBER
-		VALUES(MEMBERSEQ.NEXTVAL,#{member_id},#{member_pw},#{member_name},#{member_phone},#{member_addr},#{member_email}, SYSDATE, 1, 'ROLE_USER',1)
-	</insert>
-	<select id="loginChk" parameterType="map"
-		resultType="memberDto">
-		SELECT * FROM MEMBER WHERE MEMBER_ID = #{member_id} AND MEMBER_PW = #{member_pw}
-	</select>
-
-	<select id="idChk" parameterType="String"
-		resultType="com.my.test.dto.MemberJoinDto">
-		SELECT * FROM MEMBER WHERE MEMBER_ID =#{member_id}
-	</select>
-
-<!-- 	<select id="nickChk" parameterType="map"
-		resultType="MemberDto">
-		SELECT * FROM MEMBER WHERE USER_NICKNAME = #{nickname}
-	</select> -->
-
-	<!-- 이름으로 이메일 가져오기(아이디) -->
-	<select id="bringByname" parameterType="map"
-		resultType="MemberDto">
-		SELECT * FROM USER_INFO WHERE USER_NAME = #{member_name} AND
-		USER_NICKNAME = #{member_nickname}
-	</select>
-	<!-- 이름으로 이메일 가져오기(패스워드) -->
-	<select id="bringByid" parameterType="map"
-		resultType="memberDto">
-		SELECT * FROM MEMBER WHERE USER_NAME = #{member_name} AND
-		USER_ID = #{member_id}
-	</select>
-	<!-- 임시비밀번호로 바꾸기 -->
-	<update id="changePw" parameterType="memberDto">
-		UPDATE MEMBER SET USER_PW = #{member_pw} WHERE USER_ID = #{member_id}
-	</update>
 </mapper>

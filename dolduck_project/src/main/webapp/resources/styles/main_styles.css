@@ -424,7 +424,6 @@ section
 
 .has-search .form-control {
     padding-left: 2rem;
-    width: 220px;
 }
 
 .has-search .form-control-feedback {
@@ -848,8 +847,6 @@ section
     stroke: black;
     stroke-width: 3px;
 }
-
-
 svg{
     display: block;
     color: #ffa550;
@@ -1219,7 +1216,7 @@ svg{
 .goodies{
 	position: relative;
 	width:100%;
-	height: auto;
+	height: 500px;
 	border: 2px solid #e3e3e3;
 	  
 }
@@ -1227,49 +1224,11 @@ svg{
 	border: 1px solid #ffffff!important;
     color: #ffffff;
     display: block;
-    padding: 1rem 1rem;
+    padding: 1.5rem 3rem;
     background: #ffa550;
-    font-size :20px;
 }
 .market_link:hover {
 	color: #e3e3e3!important;
-}
-
-.goodies-item{
-	border: 1px solid rgb(0,0,1,.1);
-	display: inline-block;
-	width: 200px; height: 200px;
-	text-align: center;
-	margin: 5px 10px 20px;
-}
-
-.goodies-item-title{
-	font-weight: bold;
-	font-size: 20px;
-	margin-top : 10px;
-}
-
-.btn-buy-item{
-	width: 108px;
-    height: 32px;
-    border-radius: 16px;
-    background-color : #000;
-   	/* background-color: #36abee; */
-    color: #fff;
-    font-size: 13px;
-    margin-top: 10px;
-}
-.btn-buy-item:hover{
-	background-color: #36abee;
-}
-.vote-area-img{
-	padding: 15px;
-}
-.vote-area-subject{
-	font-size: 18px;
-}
-.vote-area-button{
-	padding: 5px;
 }
 
 /*******************
@@ -1277,9 +1236,12 @@ svg{
 *******************/
 
 .login{
+	
 	margin-top: 300px;
 }
 .login .login_table{
+	
+	border: 1px #e3e3e3;
     height: 345px;
     text-align: -webkit-center;
     padding: 36px;
@@ -1288,14 +1250,12 @@ svg{
 .login_text{
 	margin-bottom: 24px;
 }
-.login .form-control{
-    color: #000000;
-    margin: 3px;
-    width: 250px;
-
+.form-control{
+	color: #000000;
+	margin: 3px;
 }
 .login_button{    
-    width: 396%;
+    width: 345%;
     margin: 18px 0 0 -3px;
     color: #ffffff;
     background: #ffa550;
@@ -1304,80 +1264,8 @@ svg{
     padding: .375rem .75rem;
 }
 .join_button{    
-	width: 396%;
-    margin: -5px 0 0 -3px;
-    color: #ffffff;
-    background: #ffa550;
-    border: 5px solid #ffa550;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-}
-/*******************
-	  회원가입
-*******************/
-.join{
-    margin-top: 182px;
-    margin-bottom: 100px;
-}
-.join .join_table{
-	
-	border: 1px #e3e3e3;
-    height: auto;
-    text-align: -webkit-center;
-    padding: 36px;
-    border-radius: .25rem;
-}
-.join_form{
-	margin-top: 85px;
-}
-table {
-  border-collapse: separate;
-  border-spacing: 0 10px;
-}
-#btn_idcheck{
-    width: 381px;
-    margin: 3px 1px 0px 1px;
-    color: #ffffff;
-    background: #ffa550;
-    border: 5px solid #ffa550;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-}
-#btn_sendemail{
-    width: 381px;
-    margin: 3px 1px 0px 1px;
-    color: #ffffff;
-    background: #ffa550;
-    border: 5px solid #ffa550;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-}
-#ranChk{
-    width: 381px;
-    margin: 3px 1px 0px 1px;
-    color: #ffffff;
-    background: #ffa550;
-    border: 5px solid #ffa550;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-}
-
-#addr{
-    width: 66%;
-    float: left;
-}
-#set_addr{
-    margin: -1px 2px 4px 5px;
-    color: #ffffff;
-    background: #ffa550;
-    border: 3px solid #ffa550;
-    border-radius: .25rem;
-    padding: .375rem .75rem;
-    width: 32%;
-}
-#joinup{
-    width: 381px;
-    margin: 42px 1px 0px 1px;
+	width: 345%;
+    margin: 1px 0 0 -3px;
     color: #ffffff;
     background: #ffa550;
     border: 5px solid #ffa550;
