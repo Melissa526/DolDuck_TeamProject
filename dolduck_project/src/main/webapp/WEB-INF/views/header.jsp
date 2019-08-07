@@ -33,7 +33,7 @@
             <ul class="d-flex flex-row align-items-start justify-content-start">
                <li class="active"><a href="home.do">HOME</a></li>
                <li><a href="youtube.do">YouTube</a></li>
-               <li><a href="vote.do">Vote</a></li>
+               <li><a href="#">Vote</a></li>
                <li><a href="chart.do">Music Chart</a></li>
                <li><a href="#">LIVE</a></li>
                <li><a href="#">Board</a></li>
@@ -75,7 +75,7 @@
                <ul class="d-flex flex-column align-items-start justify-content-start">
                   <li><a href="home.do">HOME</a></li>
                   <li><a href="youtube.do">You Tube</a></li>
-                  <li><a href="vote.do">Vote</a></li>
+                  <li><a href="#">Vote</a></li>
                   <li><a href="chart.do">Music Chart</a></li>
                   <li><a href="#">LIVE</a></li>
                   <li><a href="#">Board</a></li>
