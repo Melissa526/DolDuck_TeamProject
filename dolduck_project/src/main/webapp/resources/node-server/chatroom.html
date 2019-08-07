@@ -1,52 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Socket.io Chat</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font: 13px Helvetica, Arial; }
-        form { padding: 3px; position: fixed; bottom: 0; width: 100%; }
-        form input { border: 0; padding: 10px; width: 85%; margin-right: .5%; }
-        form button { width: 13.5%; background: rgb(255, 229, 52); border: none; border-radius: 0.2em; padding: 10px; font-weight: bold;}
-        #messages { list-style-type: none; padding: 0; }
-        #messages li { padding: 5px 10px; background: rgb(255,229,52); border-radius: 0.4em; font-size: 15px;
-                    float: right; display: block; margin: 5px 2px 5px;}
-        .div-chat-box{ overflow-y: auto; }
-    </style>
+
+    <link rel="stylesheet" href="/css/main.css" />
+
 </head>
+
 <body>
-    <div class="div-chat-box">
+    <div class="div-chatbox">
     <ul id="messages"></ul>
     </div>
     <div class="div-button-send">
-    <form action="">
-        <input id="m" autocomplete="off"/><button>전 송</button>
-    </form>
+        <form action="">
+            <input id="m" autocomplete="off" /><button>전 송</button>
+        </form>
     </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script>
-        $(function(){
-            var socket = io();
-            $('form').submit(function(e){
-                e.preventDefault();
-                var msg = $('#m').val().trim();
-                if(msg != "" && msg != null ){
-                    socket.emit('chat message', msg);
-                }else{
-
-                }
-
-                $('#m').val('');
-                return false;
-            });
-            socket.on('data', function(data){
-                $('#messages').append($('<li>').text(data.chatMessage));
-            });
-        })
-    </script>
+    <script id="userInfo" src="js/main.js" name="Test" room="room1"></script>
 </body>
 </html>
