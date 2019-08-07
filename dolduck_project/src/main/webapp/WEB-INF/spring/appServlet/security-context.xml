@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+   xmlns:beans="http://www.springframework.org/schema/beans"
+   xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans 
+   http://www.springframework.org/schema/beans/spring-beans.xsd 
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context.xsd 
+   http://www.springframework.org/schema/security 
+   http://www.springframework.org/schema/security/spring-security.xsd ">
+
+	<context:component-scan base-package="com.my.test"/>
+		<!-- 정적 리소스 파일들에는 보안 설정을 하지않음 css img등 -->
+	<http pattern="/resources/**" security="none"></http>
+	<http pattern="/include/**" security="none"/>
+	
+	<!-- 검사, 허가 url-->
+	<http auto-config="true" use-expressions="true" create-session="never">
+
+		<!-- 권한에 관계없이 접속 가능한 영역 회원가입, 로그인, 접속거부 -->
+		<intercept-url pattern="/member/**" access="permitAll"/>
+		<!-- 로그인한 사용자 영역 -->
+		<intercept-url pattern="/market/**" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
+		<!-- 관리자 영역 설정 -->
+		<intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')"/>
+		<!-- 로그인폼 -->
+		<form-login	
+			login-page="/member/login.do"
+			login-processing-url="/home.do"
+			authentication-success-handler-ref="userLoginSuccessHandler"
+			authentication-failure-handler-ref="userLoginFailureHandler"		
+			username-parameter="id"
+			password-parameter="passwd"		
+		/>
+		
+		<!-- max-sessions="1" 동시접속 제한  -->
+		<!-- error-if-maximum-exceeded="true" 동시로그인 발생시 에러 출력 -->
+		<!-- 세션 만료시 로그인페이지로 -->
+		<session-management >
+			 <concurrency-control max-sessions="1" expired-url="/member/login.do" error-if-maximum-exceeded="true"/>
+		</session-management>
+		
+		<!-- 접근권한이 없는 경우의 코드 -->
+		<access-denied-handler ref="userDeniedHandler"/>
+		
+		<logout
+			logout-url="/member/logout.do"
+			logout-success-url="/member/login.do"
+		/>
+		
+<!-- 		<csrf disabled="true"/> -->
+	</http>
+	
+	<!-- 권한없을 때, 로그인 성공했을 때, 로그인 실패했을 때 -->
+	<beans:bean id="userDeniedHandler" class="com.my.test.service.UserDeniedHandler"/>
+	<beans:bean id="userLoginSuccessHandler" class="com.my.test.service.UserLoginSuccessHandler"/>
+	<beans:bean id="userLoginFailureHandler" class="com.my.test.service.UserLoginFailureHandler"/>
+	
+	<!-- 로그인 인증을 처리하는 빈 -->
+	<beans:bean id="userService" class="com.my.test.service.UserAuthenticationService"/>
+<!-- 		<beans:constructor-arg ref="sqlSession"></beans:constructor-arg> -->
+<!-- 	</beans:bean> -->
+
+	<!-- 비밀번호 암호화 -->
+	<beans:bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+</beans:beans>
