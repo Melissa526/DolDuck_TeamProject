@@ -1208,12 +1208,16 @@ svg{
 *********************************/
 .market{
 	margin-top: 200px;
+	margin-bottom: 100px;
+}
+.market_ul{
+	border-bottom: none;
 }
 .market h1{
 	margin-bottom: 40px;
 }
 
-.goodies{
+.market_border{
 	position: relative;
 	width:100%;
 	height: 500px;
@@ -1229,6 +1233,47 @@ svg{
 }
 .market_link:hover {
 	color: #e3e3e3!important;
+}
+
+.heart_size{
+	margin-top: 10px;
+    width: 40px;
+}
+.heartShop-item{
+    border: 1px solid rgb(0,0,1,.1);
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin: 21px 12px 20px;
+}
+
+.heartShop-item-title{
+	font-size: 27px;
+    margin-top: 70px;
+}
+
+.btn-buy-item{
+	width: 108px;
+    height: 32px;
+    border-radius: 16px;
+    background-color : #000;
+   	/* background-color: #36abee; */
+    color: #fff;
+    font-size: 13px;
+    margin-top: 10px;
+}
+.btn-buy-item:hover{
+	background-color: #36abee;
+}
+.vote-area-img{
+	padding: 15px;
+}
+.vote-area-subject{
+	font-size: 18px;
+}
+.vote-area-button{
+	padding: 5px;
 }
 
 /*******************

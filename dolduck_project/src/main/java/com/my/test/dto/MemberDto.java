@@ -13,16 +13,21 @@ public class MemberDto {
 	private Date member_regdate;
 	private String member_enabled;
 	private String member_role;
+	private int member_heart;
 	private int member_vote;
-	
+
 	public MemberDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public MemberDto(int member_seq, String member_id, String member_pw, String member_name, String member_phone,
-			String memebr_addr, String memebr_email, Date member_regdate, String member_enabled, String member_role,
-			int member_vote) {
-		super();
+
+	public MemberDto(String username, String password, boolean enabled, 
+			boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked,
+			Collection<? extends GrantedAuthority> authorities, int member_seq, String member_id, String member_phone, String memebr_addr,
+			String memebr_email, String member_role, int member_heart, int member_vote ){
+		//userClass에 보내는 코드
+		super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+
 		this.member_seq = member_seq;
 		this.member_id = member_id;
 		this.member_pw = member_pw;
@@ -33,6 +38,7 @@ public class MemberDto {
 		this.member_regdate = member_regdate;
 		this.member_enabled = member_enabled;
 		this.member_role = member_role;
+		this.member_heart = member_heart;
 		this.member_vote = member_vote;
 	}
 	public int getMember_seq() {
@@ -95,6 +101,15 @@ public class MemberDto {
 	public void setMember_role(String member_role) {
 		this.member_role = member_role;
 	}
+	
+	public int getMember_heart() {
+		return member_heart;
+	}
+
+	public void setMember_heart(int member_heart) {
+		this.member_heart = member_heart;
+	}
+
 	public int getMember_vote() {
 		return member_vote;
 	}
@@ -103,10 +118,11 @@ public class MemberDto {
 	}
 	@Override
 	public String toString() {
-		return "MemberDto [member_seq=" + member_seq + ", member_id=" + member_id + ", member_pw=" + member_pw
-				+ ", member_name=" + member_name + ", member_phone=" + member_phone + ", memebr_addr=" + memebr_addr
-				+ ", memebr_email=" + memebr_email + ", member_regdate=" + member_regdate + ", member_enabled="
-				+ member_enabled + ", member_role=" + member_role + ", member_vote=" + member_vote + "]";
+		return "MemberDto [member_seq=" + member_seq + ", member_id=" + member_id + ", member_phone=" + member_phone
+				+ ", memebr_addr=" + memebr_addr + ", memebr_email=" + memebr_email + ", member_regdate="
+				+ member_regdate + ", member_role=" + member_role + ", member_heart=" + member_heart + ", member_vote="
+				+ member_vote + "]";
 	}
+	
 	
 }

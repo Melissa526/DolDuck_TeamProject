@@ -2,19 +2,20 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
 </head>
 
 <body>
-<!-- header -->
-<%@include file="../header.jsp" %>
+	<!-- header -->
+	<%@include file="../header.jsp" %>
 
 
 	<div class="container market">
-	
-		
+
+
 		<h1> Market </h1>
 		<ul class="nav nav-tabs">
 			<li class="nav-item">
@@ -25,14 +26,15 @@
 			</li>
 
 		</ul>
-			<div class="col-md-12 goodies">
-				<!-- 계시판ㄱㄱ -->
-				
-			</div>
-		
-	
+
+		<div class="col-md-12 market_border">
+			<!-- 계시판ㄱㄱ -->
+		</div>
+
+
 	</div>
 
 
 </body>
+
 </html>

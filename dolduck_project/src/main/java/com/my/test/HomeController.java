@@ -4,10 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.my.test.dto.MemberDto;
 import com.my.test.model.biz.MemberBiz;
 import com.my.test.util.Music;
 import com.my.test.util.WebScrap;
@@ -86,9 +83,8 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping("musicsearch.do")
-	@ResponseBody
-	public JSONObject getChart() {
+	@RequestMapping(value = "musicsearch.do", method = {RequestMethod.POST})
+	public @ResponseBody JSONObject getChart() {
 		//멜론차트 크롤링해서 List로 return 
 		List<Music> list = new ArrayList<Music>();
 		list = crawling.getMusicChart();
@@ -134,7 +130,7 @@ public class HomeController {
 	public String Goodies() {
 		return "market/Goodies";
 	}
-	
+
 	/************************* 회원가입 ***********************************/
 	
 	@RequestMapping("join.do")

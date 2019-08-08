@@ -1,4 +1,5 @@
-$(document).ready(function(){
+$(window).on('load', function(){
+
 	var chart,
 	start = 0, end = 30
 			
@@ -20,12 +21,18 @@ $(document).ready(function(){
 })
 
 function getMusicChart(){
+	var token = $("meta[name='_csrf']").attr("content");
+	var header = $("meta[name='_csrf_header']").attr("content");
 	var list;
+	
 	$.ajax({
 		type : 'POST',
 		url : 'musicsearch.do',
 		dataType : 'json',
-		async : false,
+		async : false ,
+		beforeSend: function( xhr ) {
+			xhr.setRequestHeader(header, token);
+		},
 		success : function(data){
 			$('.label-search').text(data.getTime);
 			list = data.chart;
@@ -48,7 +55,8 @@ function paginationOfList(chart, start, end){
 				  <td><a href="#">${song.title}</td>
 				  <td>${song.singer}</td>
 				  <td>${song.album}</td>
-			      </tr>`);
+			      </tr>`
+		);
 	}
 }
 
