@@ -114,7 +114,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
    <!--  <script src="/socket.io/socket.io.js"></script> -->
-    <script src="https://192.168.10.169:5571/socket.io/socket.io.js" type="text/javascript"></script>
+    <script src="https://localhost:5571/socket.io/socket.io.js" type="text/javascript"></script>
     <script id="userRoom" src="resources/js/broadcast/js/user.js" room="${room_number}"></script>
     <script src="resources/js/utils/live.js"></script>
 </body>

@@ -1,5 +1,5 @@
 /*  USER  */
-var socket = io.connect('https://192.168.10.169:5571')
+var socket = io.connect('https://localhost:5571')
 
 var query = location.href.split('/')[4]
 var param = query.split('?')[1]

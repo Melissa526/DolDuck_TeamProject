@@ -104,7 +104,7 @@
     <!-- 윈도우  -->
     <!-- <script src="https://192.168.10.169:5571/socket.io/socket.io.js"></script> -->
     <!-- 맥북  -->
-    <script src="https://192.168.10.169:5571/socket.io/socket.io.js"></script>
+    <script src="https://localhost:5571/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="resources/js/broadcast/js/IoConnectException.js"></script>
     <script src="resources/js/broadcast/js/main.js"></script>

@@ -109,7 +109,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/c1455fa856.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://192.168.10.169:5571/socket.io/socket.io.js"></script>
+	<script src="https://localhost:5571/socket.io/socket.io.js"></script>
     <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
     <script id="casterInfo" src="resources/js/broadcast/js/caster.js" room="${room_number}"></script>
 </body>

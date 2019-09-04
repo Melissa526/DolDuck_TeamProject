@@ -68,19 +68,19 @@ CREATE TABLE BROADCAST(
 );
 
 --
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-12 12:00','yyyy-mm-dd hh24:mi'), null, ‘아이즈(IZ)’, ‘THE 2ND SINGLE ALBUM TEASER’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-14 12:00','yyyy-mm-dd hh24:mi'), null, ‘’Weki Meki, ‘위키미키 - Tiki-Tak(99%)M/V’ , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-12 12:00','yyyy-mm-dd hh24:mi'), null, '아이즈(IZ)', 'THE 2ND SINGLE ALBUM TEASER' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-14 12:00','yyyy-mm-dd hh24:mi'), null, 'Weki Meki', '위키미키 - Tiki-Tak(99%)M/V' , null);
 INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-09-02 09:00','yyyy-mm-dd hh24:mi'), null, 'Zsoo', 'test' , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-15 12:54’,’yyyy-mm-dd hh24:mi'), null, ’THE BOYZ’, ‘야방’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-16 12:01’,’yyyy-mm-dd hh24:mi'), null, ‘Stray Kids’, ‘찬이의 방’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-17 01:46,’yyyy-mm-dd hh24:mi'), null, ’TWICE’, ‘특별한 라이브’ , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-15 12:54','yyyy-mm-dd hh24:mi'), null, 'THE BOYZ', '야방' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-16 12:01','yyyy-mm-dd hh24:mi'), null, 'Stray Kids', '찬이의 방' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-17 01:46','yyyy-mm-dd hh24:mi'), null, 'TWICE', '특별한 라이브' , null);
 INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-09-02 09:00','yyyy-mm-dd hh24:mi'), null, 'Zsoo', 'test' , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-18 12:00','yyyy-mm-dd hh24:mi'), null, ‘SMTOWN’, ‘SuperM : 13th-Aug-2019’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-18 02:24’,’yyyy-mm-dd hh24:mi'), null, ‘VAV’, ‘[VAV] FM41.9Mhz 바로니의 행복한 라디오’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-20 05:04’,’yyyy-mm-dd hh24:mi'), null, ‘BLACKPINK’, ‘BLACKPINK-DIARIES EP.13’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-20 6:09’,’yyyy-mm-dd hh24:mi'), null, ‘(G)I-DLE’, ‘댕댕이 자매 is back!’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-27 12:18’,’yyyy-mm-dd hh24:mi'), null, ‘MAMAMOO’, ‘[휘인] ‘soar’ Making Prologue #0’ , null);
-INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-28 7:31’,’yyyy-mm-dd hh24:mi'), null, ‘KANG DANIEL’, ‘Good-bye no-name. Hello _____!’ , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-18 12:00','yyyy-mm-dd hh24:mi'), null, 'SMTOWN', 'SuperM : 13th-Aug-2019' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-18 02:24','yyyy-mm-dd hh24:mi'), null, 'VAV', '[VAV] FM41.9Mhz 바로니의 행복한 라디오' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-20 05:04','yyyy-mm-dd hh24:mi'), null, 'BLACKPINK', 'BLACKPINK-DIARIES EP.13' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-20 6:09','yyyy-mm-dd hh24:mi'), null, '(G)I-DLE', '댕댕이 자매 is back!' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-27 12:18','yyyy-mm-dd hh24:mi'), null, 'MAMAMOO', '[휘인] soar Making Prologue #0' , null);
+INSERT INTO BROADCAST VALUES(BROADCASTSEQ.NEXTVAL, TO_DATE('2019-08-28 07:31', 'yyyy-mm-dd hh24:mi'), null, 'KANG DANIEL', 'Good-bye no-name. Hello _____!' , null);
 
 /*-------------- 게시판 테이블	-----------------*/
 DROP SEQUENCE FREEBOARD_SEQ;

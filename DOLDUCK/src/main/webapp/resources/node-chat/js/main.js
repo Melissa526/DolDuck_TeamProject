@@ -27,7 +27,7 @@ $(function () {
     });
 
     socket.on('joinedRoom', function (data) {
-        $('#messages').append($('<li class="server">').text(`${data.name}님이 ${data.room}에 입장하셨습니다.`));
+        $('#messages').append($('<li class="server">').text(`고객센터 QnA에 입장하셨습니다.`));
     })
 
 })
