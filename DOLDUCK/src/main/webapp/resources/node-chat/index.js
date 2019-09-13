@@ -21,7 +21,13 @@ app.get('/twits', (req, res) => {
     res.sendFile(__dirname + "/twits.html");
 })
 
+app.get('/translate', (req,res) => {
+    res.sendFile(__dirname + "/translate.html")
+})
+
 const server = https.createServer(options, app)
+
+var roomArr = []
 
 const io = socketIO(server)
 
@@ -35,6 +41,12 @@ io.sockets.on('connection', (socket) => {
 
         socket.name = name
         socket.join(room)
+        
+        roomArr.push({
+            'user' : name,
+            'room' : _room
+        })
+
         console.log(`user [${socket.name}] joined ${room}`);
 
         io.sockets.to(room).emit('joinedRoom', {
@@ -65,6 +77,10 @@ io.sockets.on('connection', (socket) => {
         //소켓을 통해 이벤트 전송
         socket.broadcast.to(room).emit('message', { type: 'msg', chatMessage: msg })
     });
+
+    socket.on('reqRoom', ()=>{
+        socket.emit('roomlist', roomArr)
+    })
 
     socket.on('disconnect', (name) => {
           console.log(`user [${socket.name}] disconnected`);

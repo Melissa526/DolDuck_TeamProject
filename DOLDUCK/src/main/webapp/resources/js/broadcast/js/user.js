@@ -86,11 +86,6 @@ socket.on('chat-message', (name, msg) => {
     appendMessage(name, msg)
 })
 
-socket.on('livedCaster', (room) =>{
-    alert('방송이 종료되었습니다')
-    location.href='https://localhost:5571/'
-    //location.href='http://192.168.10.169:8787/dolduck/live-home.do'
-})
 
 /**************************** 
     WebRTC - PeerConnection

@@ -1,9 +1,6 @@
-$(function () {
-
-    //script의 attr 가져오기
+$(function(){
     var name = $('#userInfo').attr("name")
     var room = parseInt(Math.random()*9999999999)
-   /*  var room = $('#userInfo').attr("room") */
 
     var socket = io();
 
@@ -28,6 +25,6 @@ $(function () {
 
     socket.on('joinedRoom', function (data) {
         $('#messages').append($('<li class="server">').text(`고객센터 QnA에 입장하셨습니다.`));
-    })
+    });
 
 })

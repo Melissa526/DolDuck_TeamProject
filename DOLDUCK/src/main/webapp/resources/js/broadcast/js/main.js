@@ -40,9 +40,8 @@ function appendRoom(item){
 	                    	</a>
                     	</div>
                     	<div class="channel-info">
-                    		<p><a href="void:0;">[${item.caster}] ${item.title}</a></p>
+                    		<p><a href="join-onair.do?room=${item.room}">[${item.caster}] ${item.title}</a></p>
                     		<p>방송시작시간: ${item.date}</p>
-                    		<p>방 번호: ${item.room}</p>
                     	</div>
                     </li>`
     $('#channel-item').append(roomUnit)

@@ -28,6 +28,8 @@ CREATE TABLE MEMBER(
 
 SELECT * FROM MEMBER;
 
+delete * from member;
+
 update member set member_role = 'ROLE_ARTIST' where member_seq = 1
 
 -- 컬럼 값 변경
@@ -35,9 +37,9 @@ ALTER TABLE MEMBER MODIFY(MEMBER_ROLE VARCHAR2(15));
 
 delete from member where member_id='admin';
 
-UPDATE MEMBER SET MEMBER_ROLE='ROLE_ADMIN' WHERE MEMBER_ID='admin1234';
+UPDATE MEMBER SET MEMBER_ROLE='ROLE_ADMIN' WHERE MEMBER_ID='admin';
 
-UPDATE MEMBER SET MEMBER_ROLE='ROLE_ARTIST' WHERE MEMBER_ID='테스트';
+UPDATE MEMBER SET MEMBER_ROLE='ROLE_ARTIST' WHERE MEMBER_ID='twice';
 
 select member_heart, member_vote from member where member_id = 'lotus526'
 

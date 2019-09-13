@@ -208,6 +208,7 @@ function sendMessage(msg, id){
 
 function sendByeMessage(){
     socket.emit('message', 'bye')
+    socket.emit('CasterLived', _room)
 }
 
 

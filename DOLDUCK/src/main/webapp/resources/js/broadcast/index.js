@@ -92,6 +92,14 @@ function getNumClients(room) {
     return numClients
 }
 
+function deleteRoom(roomNum){
+    for(let i=0 ; i<roomArr.length ; i++){
+        if(roomArr[i].room == roomNum){
+            roomArr.splice(i, 1)
+        }
+    }
+}
+
 /*******************
        Socket
 *******************/
@@ -150,6 +158,16 @@ io.sockets.on('connection', (socket) => {
     socket.on('chat-message', (_room, name, msg) => {
         io.sockets.to(_room).emit('chat-message', name , msg)
     })
+
+    
+  socket.on('CasterLived', (room) => {
+        socket.leave(room)
+        deleteRoom(room)
+    })
+
+    // socket.on('ByeUsers', (room) => {
+    //     socket.leave(room)
+    // }) 
 
     // socket.on('disconnect', function () {
     //     for (let i = 0; i < roomArr.length; i++) {

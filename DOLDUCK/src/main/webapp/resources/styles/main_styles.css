@@ -742,6 +742,8 @@ section
 }
 video{
 	width:inherit;
+	position : relative;
+	top: 9%;
 }
 
 

@@ -220,10 +220,10 @@
 			});
 			return true;
 		}
-		Swal.fire({
+		/*Swal.fire({
 			type: 'error',
 			title : '알  림',
 			text : '다시 확인해주세요'
-		});
+		});*/
 		return false;
 	}

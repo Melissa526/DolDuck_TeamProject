@@ -50,6 +50,7 @@ $(function(){
 					
 				})
 			}else if(kindOf == 'vote'){
+				
 				ajaxPurchase('buy-vote.do', amount, price)
 				$('.modal').hide()
 				location.href = 'heartShop.do'

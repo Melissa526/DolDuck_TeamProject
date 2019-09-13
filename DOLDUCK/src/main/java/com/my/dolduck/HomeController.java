@@ -157,8 +157,10 @@ public class HomeController {
 		String userId = dto.getUsername();
 		String result;
 		
+		
 		int res = biz.purchaseVote(amount, userId);
 		System.out.println(userId + "님이  " + amount + "구매합니다~");
+		
 		System.err.println("Controller Result => " + res);
 		if(res>0) {
 			result = "succeed";
@@ -194,7 +196,6 @@ public class HomeController {
 	
 	@RequestMapping("/error.do")
 	public String error(Model model,@RequestParam String kind) {
-		System.out.println(kind);
 		model.addAttribute("kind", kind);
 		return "error";
 	}
