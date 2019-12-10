@@ -36,6 +36,6 @@
 
 :point_up: 본 프로젝트의 관련 문서는 아래의 링크(구글 드라이브)에서 PDF로 확인하거나, 이 레파지토리에서 finalproject.pdf 파일을 다운로드하여 확인 할 수 있습니다.
 
-https://drive.google.com/drive/u/0/folders/1iQxVntlOKcGjPVwUx-yeYSC9L296W-Si
+https://drive.google.com/drive/folders/1iQxVntlOKcGjPVwUx-yeYSC9L296W-Si?usp=sharing
 
 
