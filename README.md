@@ -33,6 +33,7 @@
        라이브방송을 시청함과 동시에 댓글로 아티스트와 소통할 수 있다.
        
 ## Preview
+:point_up: 이 프로젝트를 실행하시려면 DolDuck_TeamProject/DOLDUCK/src/main/webapp/WEB-INF/allSqlConfiguration.sql 파일을 참고하세요!
 
 :point_up: 본 프로젝트의 관련 문서는 아래의 링크(구글 드라이브)에서 PDF로 확인하거나, 이 레파지토리에서 finalproject.pdf 파일을 다운로드하여 확인 할 수 있습니다.
 
